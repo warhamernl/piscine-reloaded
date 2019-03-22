@@ -6,7 +6,7 @@
 /*   By: mlokhors <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/19 10:52:34 by mlokhors      #+#    #+#                 */
-/*   Updated: 2019/03/19 19:55:23 by mlokhors      ########   odam.nl         */
+/*   Updated: 2019/03/20 20:08:31 by mlokhors      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	print(int argc, char **argv)
 			ft_putchar(argv[i][j]);
 			j++;
 		}
-		ft_putchar("\n");
+		ft_putchar('\n');
 		i++;
 	}
 }

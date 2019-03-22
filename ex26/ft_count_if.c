@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcmp.c                                        :+:    :+:            */
+/*   ft_count_if.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mlokhors <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/18 19:07:03 by mlokhors      #+#    #+#                 */
-/*   Updated: 2019/03/20 16:34:20 by mlokhors      ########   odam.nl         */
+/*   Created: 2019/03/20 19:27:36 by mlokhors      #+#    #+#                 */
+/*   Updated: 2019/03/20 20:32:02 by mlokhors      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+int		ft_count_if(char **tab, int (*f)(char *))
 {
-	int				i;
-	unsigned char	st1;
-	unsigned char	st2;
+	int i;
+	int j;
 
 	i = 0;
-	st1 = s1[i];
-	st2 = s2[i];
-	while (s1[i] && s2[i])
+	j = 0;
+	while (tab[i])
 	{
-		st1 = s1[i];
-		st2 = s2[i];
-		if (st1 != st2)
-			break ;
+		if ((*f)(tab[i]) == 1)
+			j++;
 		i++;
 	}
-	return (st1 - st2);
+	return (j);
 }

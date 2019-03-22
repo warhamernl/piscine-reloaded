@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcmp.c                                        :+:    :+:            */
+/*   ft_range.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mlokhors <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/18 19:07:03 by mlokhors      #+#    #+#                 */
-/*   Updated: 2019/03/20 16:34:20 by mlokhors      ########   odam.nl         */
+/*   Created: 2019/03/20 13:20:00 by mlokhors      #+#    #+#                 */
+/*   Updated: 2019/03/20 20:27:15 by mlokhors      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include <stdlib.h>
+
+int		*ft_range(int min, int max)
 {
-	int				i;
-	unsigned char	st1;
-	unsigned char	st2;
+	int len;
+	int i;
+	int *tab;
 
 	i = 0;
-	st1 = s1[i];
-	st2 = s2[i];
-	while (s1[i] && s2[i])
+	len = max - min;
+	if (min >= max)
+		return (NULL);
+	if (!(tab = (int *)malloc(sizeof(int) * len)))
+		return (NULL);
+	while (i < len)
 	{
-		st1 = s1[i];
-		st2 = s2[i];
-		if (st1 != st2)
-			break ;
+		tab[i] = min++;
 		i++;
 	}
-	return (st1 - st2);
+	return (tab);
 }
